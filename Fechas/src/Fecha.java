@@ -73,6 +73,11 @@ public class Fecha {
     cert.checkValidity(def);
     //cert.checkValidity(new Date());
     cert.verify(cert.getPublicKey());
+    int i = 0;
+    while (true) {          //Condición trivial: siempre cierta
+        i++;
+        System.out.println ("Valor de i: " + i);
+    }  
   }
   public static KeyPair generateRSAKeyPair() throws Exception {
     KeyPairGenerator kpGen = KeyPairGenerator.getInstance("RSA", "BC");

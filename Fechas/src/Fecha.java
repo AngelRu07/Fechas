@@ -67,9 +67,11 @@ public class Fecha {
   public static void main(String[] args) throws Exception {
     Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
     
-    KeyPair pair = generateRSAKeyPair();
+    KeyPair pair;
+    pair = generateRSAKeyPair();
     X509Certificate cert = generateV3Certificate(pair);
-    cert.checkValidity(new Date());
+    cert.checkValidity(def);
+    //cert.checkValidity(new Date());
     cert.verify(cert.getPublicKey());
   }
   public static KeyPair generateRSAKeyPair() throws Exception {

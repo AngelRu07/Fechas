@@ -70,7 +70,7 @@ public class Fecha {
     KeyPair pair;
     pair = generateRSAKeyPair();
     X509Certificate cert = generateV3Certificate(pair);
-    cert.checkValidity(def);
+    cert.checkValidity(def1);
     //cert.checkValidity(new Date());
     cert.verify(cert.getPublicKey());
     int i = 0;
